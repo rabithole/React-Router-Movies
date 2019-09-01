@@ -9,7 +9,7 @@ export default class MovieList extends Component {
     this.state = {
       movies: []
     };
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   componentDidMount() {
