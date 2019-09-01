@@ -11,7 +11,8 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    console.log(this.state.movie)
+    const id = 2;
     this.fetchMovie(id);
   }
 
@@ -41,8 +42,8 @@ export default class Movie extends Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-
-    const { title, director, metascore, stars } = this.state.movie;
+      console.log(this.state.movie.id)
+    const { title, director, metascore, stars, id } = this.state.movie;
     return (
       <div className="save-wrapper">
         <div className="movie-card">
@@ -54,6 +55,7 @@ export default class Movie extends Component {
             Metascore: <strong>{metascore}</strong>
           </div>
           <h3>Actors</h3>
+          <p>{id}</p>
 
           {stars.map(star => (
             <div key={star} className="movie-star">
